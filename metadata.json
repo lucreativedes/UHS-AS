@@ -1,0 +1,7 @@
+{
+  "name": "UNKLAB Highschool Attendance System",
+  "description": "A futuristic, sci-fi inspired school attendance application with QR scanning, glassmorphism UI, and real-time student/teacher tracking.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
