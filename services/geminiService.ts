@@ -2,10 +2,10 @@
 import { GoogleGenAI } from "@google/genai";
 import { AttendanceRecord, UserProfile } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export async function getAttendanceInsights(user: UserProfile, logs: AttendanceRecord[]) {
   try {
+    // Initialize GoogleGenAI right before the API call to ensure it uses the most up-to-date configuration
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const summary = logs.map(l => `${l.date}: ${l.status}`).join(", ");
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
